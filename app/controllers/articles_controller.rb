@@ -9,10 +9,14 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     if @article.save 
       flash[:notice] = "Successfully created..."
-      redirect_to articles_path
+      redirect_to article_path
     else
       render :new
     end
+  end
+  def show
+    @article=Article.find(params[:id])
+  
   end
 
   private 
