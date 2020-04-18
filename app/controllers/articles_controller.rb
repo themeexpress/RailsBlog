@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     if @article.save 
       flash[:notice] = "Successfully created..."
-      redirect_to article_path(@article)
+      redirect_to article_path(@a)
     else
       render :new
     end
@@ -28,6 +28,12 @@ class ArticlesController < ApplicationController
     else
       render :edit
     end
+  end
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    flash[:notice] = "Successfully deleted"
+    redirect_to articles_path
   end
   private 
     def article_params

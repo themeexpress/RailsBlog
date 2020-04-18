@@ -1,23 +1,2 @@
 <h1>Edit Post</h1>
-<div class="container">
-<% if @article.errors.any? %>
-  <h2>Following error(s) Prevented to create new article </h2>
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-  <%= form_for @article do |f| %>
-    <div class="form-group">
-      <%= f.label :Title %> 
-      <%= f.text_field :title, class: "form-control"%>
-    </div>
-    <div class="form-group">
-      <%= f.label :Description %>
-      <%= f.text_area :description, class: "form-control", placeholder: "Description" %>
-    </div>
-    <%= f.submit %>
-  <% end %>
-</div>
-<%= link_to  "Back to List", articles_path %>
+<%= render  "form" %>
