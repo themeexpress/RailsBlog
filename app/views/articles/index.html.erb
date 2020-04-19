@@ -1,20 +1,39 @@
-<h1>Listing All posts</h1>
-<%= link_to  "Create New Post", new_article_path %>
-<table>
-<tr>
-  <th>Title</th>
-  <th>Description</th>
-  <th>Actions</th>
-</tr>
-<% @articles.each do |article| %>
-<tr>
-  <td><%= article.title %></td>
-  <td><%= article.description %></td>
-  <td><%= link_to "Edit", edit_article_path(article) %>|
-  <%= link_to "Show", article_path(article) %> | 
-  <%= link_to  "Delete", article_path(article), method: :delete, data: {confirm: 'Are you sure'} %>
-    
-  </td>
-</tr>
-<% end %>
-</table>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>John's Blog</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Home</a></li>
+        <li><a href="#section2">Friends</a></li>
+        <li><a href="#section3">Family</a></li>
+        <li><a href="#section3">Photos</a></li>
+      </ul><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+    <% @articles.each do |article| %>
+      <div class="row">
+    		<div class="col-md-4">
+          <img class="img-thumbnail"  src="https://pbs.twimg.com/profile_images/473506797462896640/_M0JJ0v8.png">
+        </div>
+          <div class="col-md-8">
+            <h2><%= article.title%></h2>
+            <h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, <%= article.created_at%></h5>
+            <h5><span class="label label-danger">Food</span> <span class="label label-primary">Ipsum</span></h5><br>
+            <p><%= article.description %></p>
+            <button type="button" class="btn btn-info">Read More..</button>
+          </div>
+      </div>
+      <hr>
+    <% end %>
+    </div>
+  </div>
+</div>
