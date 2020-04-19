@@ -1,12 +1,5 @@
 <div class="container">
-<% if @article.errors.any? %>
-  <h2>Following error(s) Prevented to create new article </h2>
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render  "shared/errors", obj: @article %>
   <%= form_for @article do |f| %>
     <div class="form-group">
       <%= f.label :Title %> 
