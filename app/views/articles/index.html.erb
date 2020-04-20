@@ -8,7 +8,7 @@
           <img class="img-thumbnail"  src="https://pbs.twimg.com/profile_images/473506797462896640/_M0JJ0v8.png">
         </div>
           <div class="col-md-8">
-            <h2><%= article.title%></h2>
+            <h2><%= link_to article.title, article_path(article)%></h2>
             <h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, <%= article.created_at%></h5>
             <h5><span class="label label-danger">Food</span> <span class="label label-primary">Ipsum</span></h5><br>
             <p><%= article.description %></p>
