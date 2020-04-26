@@ -1,4 +1,16 @@
 <div class="container">
+  <% if @article.user %>
+    <ul class="listing">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <h4>Created By </h4>
+          <li><%= link_to gravater_for(@article.user), user_path(@article.user) %></li>
+          <li><%= link_to @article.user.username, user_path(@article.user)%></li>
+          <li><small><%= pluralize(@article.user.articles.count,'article') if @article.user.articles %></small></li>
+        </div>
+      </div>
+    </ul>
+  <% end %>
   <h2><%= @article.title %></h2>
   <div class="panel panel-default">
     <div class="panel-body"><%= simple_format(@article.description) %></div>
