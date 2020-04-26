@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.order('created_at DESC')
-    .order('created_at DESC')
+    @articles = Article.paginate(page: params[:page], per_page: 5)
   end
   def new
     @article = Article.new

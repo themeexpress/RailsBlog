@@ -1,7 +1,12 @@
 <div class="container-fluid">
   <%= render  "sidenav" %>
   <div class="col-sm-9">
+    <div class="center">
+      <%= will_paginate %>
+    </div>
     <%= render  "articles",obj: @articles %> 
+    <div class="center">
+      <%= will_paginate %>
     </div>
   </div>
 </div>
