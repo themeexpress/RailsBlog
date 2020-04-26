@@ -1,26 +1,7 @@
 <div class="container-fluid">
   <%= render  "sidenav" %>
-
   <div class="col-sm-9">
-    <% @articles.each do |article| %>
-      <div class="row">
-    		<div class="col-md-4">
-          <img class="img-thumbnail"  src="https://pbs.twimg.com/profile_images/473506797462896640/_M0JJ0v8.png">
-        </div>
-          <div class="col-md-8">
-            <h2><%= link_to article.title, article_path(article)%></h2>
-            <h5> 
-              <span class="glyphicon glyphicon-user"></span> Post by <%= article.user.username if article.user %>, 
-              Created at <span class="glyphicon glyphicon-time"></span> <%= time_ago_in_words(article.created_at) %> ago,
-              Created at <span class="glyphicon glyphicon-time"></span> <%= time_ago_in_words(article.updated_at) %> ago,
-              </h5>
-            <h5><span class="label label-danger">Food</span> <span class="label label-primary">Ipsum</span></h5><br>
-            <p><%=  truncate(article.description, length: 120) %></p>
-            <button type="button" class="btn btn-info">Read More..</button>
-          </div>
-      </div>
-      <hr>
-    <% end %>
+    <%= render  "articles",obj: @articles %> 
     </div>
   </div>
 </div>
