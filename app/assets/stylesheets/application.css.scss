@@ -18,5 +18,43 @@
   padding-left: 23px;
 }
 .listing{list-style: none;text-align: center;padding: 15px;}
+.footer-nav .navbar-nav{ display: inline-block;float: none;}
+.navbar-nav{text-align: center;}
+.custom-navbar{
+  border-radius: 0px !important;
+}
+.custom-band{
+  font-weight: 500 !important;
+  color: #ffffff !important;
+}
+.copyright{text-align: left;}
+.footer-area{
+  margin: 20px 0px 20px 0px;
+  border-top: 1px solid #f1f1f1;
+  padding: 20px;
+}
+.footer-nav-area{
+  text-align: right
+}
+.footer-nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-nav-item{
+  display: inline;
+  padding-left: 8px;
+}
+
+.sidebar{
+  border:1px solid #f1f1f1;
+  padding:10px;
+  }
+  .sidebar-child{
+  margin-bottom:15px;
+  border-bottom:1px solid #f1f1f1;
+  }
+
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
