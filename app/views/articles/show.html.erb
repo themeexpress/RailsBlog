@@ -16,6 +16,10 @@
     <div class="panel-body"><%= simple_format(@article.description) %></div>
   </div>
   <%= link_to  "All Post", articles_path, class: "btn btn-xs btn-primary" %>
-  <%= link_to  "Edit post", edit_article_path(@article), class: "btn btn-xs btn btn-success" %>
+  <% if logged_in? && current_user == @article.user %>
+    <%= link_to  "Delete Post", article_path(@article), method: :delete,
+                  data: {confirm: 'Are you want to delete?'}, class:'btn btn-danger' %>
+    <%= link_to  "Edit post", edit_article_path(@article), class: "btn btn-xs btn btn-success" %>
+  <% end %>
 </div>
 
