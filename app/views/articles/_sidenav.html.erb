@@ -1,10 +1,14 @@
 <div class="sidebar">
   <div class="sidebar-child">
-    <h1 class="active">SideBar 1</h1>
-    <p>Id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Id elit non mi porta gravida at eget metus.</p>
+    <div class="sidebar-header"> Recent Posts </div>
+    <ul class="recent_post_ul">
+    <% @recent_post.each do |article| %>
+      <li> <%= link_to truncate(article.title, length: 50), article_path(article) %></li>
+    <% end %>
+    </ul>
   </div>
   <div class="sidebar-child">
-    <h1 class="active">SideBar 1</h1>
+    <h1 class="active">SideBar 2</h1>
     <p>Id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Id elit non mi porta gravida at eget metus.</p>
   </div>
 </div>

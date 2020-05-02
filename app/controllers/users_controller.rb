@@ -14,9 +14,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        flash[:success] = 'user was successfully created.'
-        format.html { redirect_to articles_path }
-        format.xml { render xml: @user, status: :created, location: @user }
+        session[:user_id] = @user.id
+        flash[:success] = "Welcome to the Rails Blog #{@user.username}"
+        format.html { redirect_to root_path }
       else
         format.html { render action: "new" }
         format.xml { render xml: @user.errors, status: :unprocessable_entity }

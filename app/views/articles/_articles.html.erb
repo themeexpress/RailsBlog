@@ -15,12 +15,12 @@
             <p><%=  truncate(article.description, length: 120) %></p>
             <% if logged_in? && current_user == article.user %>
               <div class="article-action">
-                <%= link_to  "Edit Post", edit_article_path(article), class:'btn btn-info' %>
+                <%= link_to  "Edit Post", edit_article_path(article), class:'btn btn-xs btn btn-info' %>
                 <%= link_to  "Delete Post", article_path(article), method: :delete,
-                data: {confirm: 'Are you want to delete?'}, class:'btn btn-danger' %>
+                data: {confirm: 'Are you want to delete?'}, class:'btn btn-xs btn btn-danger' %>
               </div>
             <% end %>
-            <button type="button" class="btn btn-info">Read More..</button>
+            <button type="button" class="btn btn-xs btn btn-info">Read More..</button>
           </div>
       </div>
       <hr>
