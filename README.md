@@ -1,24 +1,33 @@
-# README
+# Introduction
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is minimul Ruby on rails blog application. I have cover many things in this application like authentication, relational mapping, partical, validation,password digest, and so on.
 
-Things you may want to cover:
+# live version on Heroku
 
-* Ruby version
+https://railsblog007.herokuapp.com/
 
-* System dependencies
+# Configuration
+
+* Ruby version : 2.5.1
+
+* Rails version: 6.0.1
+
+* Bootstrap 4.0
 
 * Configuration
 
-* Database creation
+* Database: PostgreSQL version 12
 
-* Database initialization
+# what I have covered:
 
-* How to run the test suite
+* Modern Authentication with unique email and username
 
-* Services (job queues, cache servers, search engines, etc.)
+* Bootstrap 4 intregration
 
-* Deployment instructions
+* Relational mapping like one to one and one to many
 
-* ...
+* query optimization with before action
+
+* Sign In upon Sign Up
+
+
