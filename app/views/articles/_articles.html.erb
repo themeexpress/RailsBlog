@@ -13,14 +13,14 @@
               </h5>
             <h5><span class="label label-danger">Food</span> <span class="label label-primary">Ipsum</span></h5><br>
             <p><%=  truncate(article.description, length: 120) %></p>
-            <% if logged_in? && current_user == article.user %>
+            <% if logged_in? && (current_user == article.user || current_user.admin?) %>
               <div class="article-action">
                 <%= link_to  "Edit Post", edit_article_path(article), class:'btn btn-xs btn btn-info' %>
                 <%= link_to  "Delete Post", article_path(article), method: :delete,
                 data: {confirm: 'Are you want to delete?'}, class:'btn btn-xs btn btn-danger' %>
               </div>
             <% end %>
-            <button type="button" class="btn btn-xs btn btn-info">Read More..</button>
+            <%= link_to  "Read More", article_path(article), class:'btn btn-xs btn btn-info' %>
           </div>
       </div>
       <hr>
