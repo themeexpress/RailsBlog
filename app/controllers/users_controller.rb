@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
   before_action :require_admin, only: [:destroy]
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page],per_page: 5)
   end
 
   def new
@@ -37,14 +37,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user_articles = @user.articles.paginate(page: params[:page],per_page: 1)
+    @user_articles = @user.articles.paginate(page: params[:page],per_page: 3)
   end
 
   def destroy
     @user = User.find(params[:id])
     @user.destroy
     flash[:danger] = "User and all article created by user have been deleted successfully"
-    redirect_users_path
+    redirect_to users_path
   end
   
 
