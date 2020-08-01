@@ -10,6 +10,15 @@
       <%= f.label :Description %>
       <%= f.text_area :description, class: "form-control", placeholder: "Description" %>
     </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm-8">
+          <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb|%>
+            <%= cb.label(class: "checkbox_inline input_check_box") {cb.check_box(class: "checkbox") + cb.text} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
     <%= f.submit %>
   <% end %>
 </div>
